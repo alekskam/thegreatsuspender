@@ -43,11 +43,11 @@ ol, ul {
 /* END RESET */
 * {box-sizing: border-box;}
 body {
-		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-		font-size: 15px;
+    color: #67809e;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+	font-size: 15px;
     background: #cfe0e4;
     font-weight: 300;
-    color: #444;
 }
 strong {
     font-weight: 600;
@@ -76,12 +76,25 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
+.contentNav a {
+    color: #67809e;
+    font-size: 14px;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    padding-left: 16px;
+    text-decoration: none;
+}
+
 a:hover {
     text-decoration: underline;
 }
+
 a.active{
+    background-color: #d7eff6;
     cursor: default;
-    color: #444;
     pointer-events: none;
 }
 hr {
@@ -110,7 +123,16 @@ hr {
     padding: 0 19px 0 11px;
     font-weight: 300;
 }
+#whitelist {
+    resize: none;
+    width: 649px;
+    height: 218px;
+ }
+.suspended-tabs {
+    display: none;
+}
 .headerTitle {
+    cursor: default;
     font-size: 16px;
     display: flex;
     align-items: center;
@@ -125,15 +147,19 @@ select {
     color: #444;
 }
 .formRow select {
+    color: #67809e;
+    width: 180px;
+    height: 32px;
     background: #FFF;
-    border-radius: 3px;
+    border-radius: 2px;
+    border: solid 1px #c6d0dd;
     -webkit-appearance: none;
-    padding: 10px 30px 10px 10px;
+    padding: 5px 30px 5px 10px;
     font-size: 14px;
-    border-color: #ccc;
     background-image: url(/img/ddArrow.png);
     background-repeat: no-repeat;
-    background-position: 90% 16px;
+    background-position: 92% 13px;
+    cursor: pointer;
 }
 input, select, button {
     margin-bottom: 8px;
@@ -293,9 +319,29 @@ hr.splashRule {
     margin-top: 6px;
 }
 
+.image {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+}
+.heart-image {
+    background: url('../img/keyboard-shortcuts.svg');
+}
+.keyboard-image {
+    background: url('../img/keyboard-shortcuts.svg');
+}
+.clock-icon {
+    background: url('../img/clock-blue.svg');
+}
+.options-icon {
+    background: url('../img/options.svg') no-repeat;
+}
+
 .mainContent {
+    font-weight: 400;
     margin: 40px auto;
-    background: #fff;
     width: 940px;
     height: 1014px;
     border-radius: 10px;
@@ -304,20 +350,27 @@ hr.splashRule {
 }
 .contentNav, .content {
     float: left;
-    padding: 20px 50px 40px;
+    padding: 24px 8px 40px 38px;
 }
 .contentNav {
-    width: 240px;
-    padding: 35px 10px 50px 50px;
-    margin: 15px 0 0;
+    background: #f0f6f7;
+    height: 970px;
+    border-bottom-left-radius: 10px;
+    width: 220px;
+    padding: 0;
 }
+
 .contentNav li {
-    height: 35px;
-    line-height: 100%;
+    display: flex;
+    height: 36px;
+    align-items: center;
+    justify-content: flex-start;
+}
+.contentNav ul {
+    margin-top: 23px;
 }
 .content {
-    border-left: 1px solid #E7E7E7;
-    width: 660px;
+    width: 720px;
     min-height: 250px;
 }
 .contentFull {
@@ -326,7 +379,7 @@ hr.splashRule {
 .content h2 {
     padding: 0 0 10px 0;
     margin: 30px 0 0 0;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 600;
 }
 .gsNote {
@@ -377,23 +430,37 @@ a.historyLink:hover {
     cursor: pointer;
     padding-right: 10px;
 }
-.sessionContents div:last-child{
+.sessionContents div:last-child {
     padding-bottom: 10px;
 }
+.groupLinkContainer {
+    width: 100%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 .groupLink {
-    margin: 0 0 0 10px;
-    font-size: 11px;
-    font-weight: normal;
+    margin-right: 8px;
+    border-radius: 2px;
+    background-color: #f0f6f7;
+    display: flex;
+    box-sizing: border-box;
+    padding: 4px 10px;
+    align-items: center;
+    justify-content: center;
+    height: 23px;
+    font-size: 13px;
 }
 .sessionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     white-space: nowrap;
+    line-height: 13px;
+    margin-bottom: 8px;
 }
-.sessionContainer .groupLink {
-    visibility: hidden;
-}
-.sessionContainer:hover .groupLink {
-    visibility: visible;
-}
+
 .sessionContents {
     margin-left: 20px;
 }
@@ -408,6 +475,15 @@ a.historyLink:hover {
 }
 .tabContainer .removeLink {
     margin-left: -15px;
+}
+#configureShortcuts {
+    width: 110px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #67809e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #screenCaptureNotice {
     display: none;
@@ -822,14 +898,19 @@ a.historyLink:hover {
     padding: 10px 15px;
     background-color: #eee;
 }
-
-
+.tooltipIcon {
+    display: none;
+}
+.other-settings {
+    display: none;
+}
 /* custom checkboxes */
 .cbLabel {
     line-height: 20px;
     display: inline-block;
     padding-left: 5px;
     vertical-align: top;
+    cursor: pointer;
 }
 input[type=checkbox] {
     width: 20px;
@@ -838,10 +919,11 @@ input[type=checkbox] {
     display: inline-block;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 }
 input[type=checkbox]:before { content:""; display:inline-block; width:20px; height:20px;}
-input[type=checkbox]:before { background: url(/img/checkOff.png) #fff;}
-input[type=checkbox]:checked:before { background: url(/img/checkOn.png) #fff; }
+input[type=checkbox]:before { background: url('../img/check-off.svg') #fff; background-size: contain;}
+input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #fff; background-size: contain; }
 
 /* custom radio btns */
 .radio {

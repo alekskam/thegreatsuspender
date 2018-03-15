@@ -17,12 +17,20 @@
 		<span class="extensionName" data-i18n="__MSG_ext_extension_name__"></span>
 	</h1>
 
+	<!--<div class="contentNav">-->
+	<!--<ul>-->
+	<!--<li><a class="active" href='options.html' data-i18n="__MSG_html_sidebar_general_settings__"><div class="image options-icon"></div></a></li>-->
+	<!--<li class="noIncognito"><a href="history.html" data-i18n="__MSG_html_sidebar_session_management__"><div class="image clock-icon"></div></a></li>-->
+	<!--<li class="noIncognito"><a href='shortcuts.html' data-i18n="__MSG_html_sidebar_shortcuts__"><div class="image keyboard-image"></div></a></li>-->
+	<!--<li><a href="about.html" data-i18n="__MSG_html_sidebar_support__"><div class="image heart-image"></div></a></li>-->
+	<!--</ul>-->
+	<!--</div>-->
 	<div class="contentNav">
 		<ul>
-			<li><a class="active" href='options.html' data-i18n="__MSG_html_sidebar_general_settings__"></a></li>
-			<li class="noIncognito"><a href="history.html" data-i18n="__MSG_html_sidebar_session_management__"></a></li>
-			<li class="noIncognito"><a href='shortcuts.html' data-i18n="__MSG_html_sidebar_shortcuts__"></a></li>
-			<li><a href="about.html" data-i18n="__MSG_html_sidebar_support__"></a></li>
+			<li><a class="active" href='options.html'><div class="image options-icon"></div>General Settings</a></li>
+			<li class="noIncognito"><a href="history.html"><div class="image clock-icon"></div>Session Management</a></li>
+			<li class="noIncognito"><a href='shortcuts.html'><div class="image keyboard-image"></div>Keyboard Shortcuts</a></li>
+			<li><a href="about.html"><div class="image heart-image"></div>About</a></li>
 		</ul>
 	</div>
 
@@ -77,28 +85,66 @@
 				<input type="checkbox" id="batteryCheck" class='option' />
 				<label for="batteryCheck" class="cbLabel" data-i18n="__MSG_html_options_suspend_only_on_battery__"></label>
 			</div>
+			<div class="formRow">
+				<input type="checkbox" id="addContextMenu" class='option' />
+				<label for="addContextMenu" class="cbLabel" data-i18n="__MSG_html_options_other_enable_context_menu__"></label>
+			</div>
 			<br />
+
+			<div class="formRow">
+				<label id="previewLbl" for="preview"
+					   data-i18n="__MSG_html_options_suspend_screen_capturing__:&nbsp;&nbsp;"></label>
+				<span data-i18n-tooltip="__MSG_html_options_suspend_screen_capturing_tooltip_line1a__
+										__MSG_html_options_suspend_screen_capturing_tooltip_line1b__
+
+										__MSG_html_options_suspend_screen_capturing_tooltip_line2a__
+										__MSG_html_options_suspend_screen_capturing_tooltip_line2b__
+
+										__MSG_html_options_suspend_screen_capturing_tooltip_line3a__
+										__MSG_html_options_suspend_screen_capturing_tooltip_line3b__">
+					<i class="tooltipIcon fa fa-question-circle"></i>
+				</span>
+				<br/>
+				<select id="preview" class='option' style="margin-top: 8px;">
+					<option value="0" data-i18n="__MSG_html_options_suspend_screen_capturing_disabled__"></option>
+					<option value="1" data-i18n="__MSG_html_options_suspend_screen_capturing_screen_only__"></option>
+					<option value="2" data-i18n="__MSG_html_options_suspend_screen_capturing_entire_page__"></option>
+				</select>
+			</div>
+			<div class="formRow" id="forceScreenCaptureContainer">
+				<input type="checkbox" id="forceScreenCapture" class='option'/>
+				<label for="forceScreenCapture" class="cbLabel"
+					   data-i18n="__MSG_html_options_suspend_force_screen_capture__&nbsp;&nbsp;"></label>
+				<span data-i18n-tooltip="__MSG_html_options_suspend_force_screen_capture_tooltip_line1__
+										__MSG_html_options_suspend_force_screen_capture_tooltip_line2__
+										__MSG_html_options_suspend_force_screen_capture_tooltip_line4__
+										__MSG_html_options_suspend_force_screen_capture_tooltip_line5__
+
+										__MSG_html_options_suspend_force_screen_capture_tooltip_line6__
+										__MSG_html_options_suspend_force_screen_capture_tooltip_line7__">
+					<i class="tooltipIcon fa fa-question-circle"></i>
+				</span>
+			</div>
 
 			<label id="whitelistLbl" for="whitelist" data-i18n="__MSG_html_options_whitelist_title__&nbsp;&nbsp;"></label>
 			<span data-i18n-tooltip="__MSG_html_options_whitelist_tooltip_line1__
 
-https://play.google.com/music/listen
-https://mail.google.com
+									https://play.google.com/music/listen
+									https://mail.google.com
 
-__MSG_html_options_whitelist_tooltip_line2__
+									__MSG_html_options_whitelist_tooltip_line2__
 
-google.com
+									google.com
 
-__MSG_html_options_whitelist_tooltip_line3__
+									__MSG_html_options_whitelist_tooltip_line3__
 
-/^https:.*google\.com/">
-
+									/^https:.*google\.com/">
 					<i class="tooltipIcon fa fa-question-circle"></i>
 			</span>
 			<br />
 			<textarea id="whitelist" class='option' rows="10" cols="50"></textarea>
 		</div>
-		<div class="sub-section">
+		<div class="sub-section suspended-tabs">
 
 			<h2 data-i18n="__MSG_html_options_suspended_title__"></h2>
 			<div class="formRow">
@@ -115,58 +161,24 @@ __MSG_html_options_whitelist_tooltip_line3__
 				</select>
 			</div>
 
-			<div class="formRow">
-				<label id="previewLbl" for="preview" data-i18n="__MSG_html_options_suspend_screen_capturing__:&nbsp;&nbsp;"></label>
-				<span data-i18n-tooltip="__MSG_html_options_suspend_screen_capturing_tooltip_line1a__
-__MSG_html_options_suspend_screen_capturing_tooltip_line1b__
 
-__MSG_html_options_suspend_screen_capturing_tooltip_line2a__
-__MSG_html_options_suspend_screen_capturing_tooltip_line2b__
-
-__MSG_html_options_suspend_screen_capturing_tooltip_line3a__
-__MSG_html_options_suspend_screen_capturing_tooltip_line3b__">
-					<i class="tooltipIcon fa fa-question-circle"></i>
-				</span>
-				<br />
-				<select id="preview" class='option' style="margin-top: 8px;">
-					<option value="0" data-i18n="__MSG_html_options_suspend_screen_capturing_disabled__"></option>
-					<option value="1" data-i18n="__MSG_html_options_suspend_screen_capturing_screen_only__"></option>
-					<option value="2" data-i18n="__MSG_html_options_suspend_screen_capturing_entire_page__"></option>
-				</select>
-			</div>
-			<div class="formRow" id="forceScreenCaptureContainer">
-				<input type="checkbox" id="forceScreenCapture" class='option' />
-				<label for="forceScreenCapture" class="cbLabel" data-i18n="__MSG_html_options_suspend_force_screen_capture__&nbsp;&nbsp;"></label>
-				<span data-i18n-tooltip="__MSG_html_options_suspend_force_screen_capture_tooltip_line1__
-__MSG_html_options_suspend_force_screen_capture_tooltip_line2__
-__MSG_html_options_suspend_force_screen_capture_tooltip_line4__
-__MSG_html_options_suspend_force_screen_capture_tooltip_line5__
-
-__MSG_html_options_suspend_force_screen_capture_tooltip_line6__
-__MSG_html_options_suspend_force_screen_capture_tooltip_line7__">
-					<i class="tooltipIcon fa fa-question-circle"></i>
-				</span>
-			</div>
 
 
 			<!-- <input type="checkbox" id="ignoreCache" class='option'></input>
 			<label for="ignoreCache">Skip browser cache when reloading tab</label>
 			<br /> -->
 		</div>
-		<div class="sub-section">
+		<div class="sub-section other-settings">
 
 			<h2 data-i18n="__MSG_html_options_other_title__"></h2>
-			<div class="formRow">
-				<input type="checkbox" id="addContextMenu" class='option' />
-				<label for="addContextMenu" class="cbLabel" data-i18n="__MSG_html_options_other_enable_context_menu__"></label>
-			</div>
+
 			<div class="formRow">
 				<input type="checkbox" id="syncSettings" class='option' />
 				<label for="syncSettings" class="cbLabel"  data-i18n="__MSG_html_options_other_enable_sync__&nbsp;&nbsp;"></label>
-			   <span data-i18n-tooltip="__MSG_html_options_other_enable_sync_tooltip_line1a__
-__MSG_html_options_other_enable_sync_tooltip_line1b__
+				<span data-i18n-tooltip="__MSG_html_options_other_enable_sync_tooltip_line1a__
+										__MSG_html_options_other_enable_sync_tooltip_line1b__
 
-__MSG_html_options_other_enable_sync_tooltip_line2__">
+										__MSG_html_options_other_enable_sync_tooltip_line2__">
 					<i class="tooltipIcon fa fa-question-circle"></i>
 				</span>
 				<div id="syncNote" class="gsNote" data-i18n="__MSG_html_options_other_enable_sync_warning__"></div>

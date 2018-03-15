@@ -10,6 +10,8 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
 
         var sessionType = (session.sessionId === gsSession.getSessionId()) ? 'current' : (session.name ? 'saved' : 'recent'),
             sessionContainer,
+            sessionInfo,
+            groupLinkContainer,
             sessionTitle,
             sessionSave,
             sessionDelete,
@@ -30,11 +32,13 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
         titleText += '&nbsp;&nbsp;<small>(' +
             winCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_window'), winCnt) + ', ' +
             tabCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_tab'), tabCnt) + ')</small>';
-
+        sessionInfo = createEl('div', {
+           'class': 'sessionInfo'
+        });
         sessionIcon = createEl('i', {
             'class': 'sessionIcon fa fa-plus-square-o',
         });
-
+		
         sessionDiv = createEl('div', {
             'class': 'sessionContents',
         });
@@ -72,23 +76,27 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
         sessionContainer = createEl('div', {
             'class': 'sessionContainer',
         });
-        sessionContainer.appendChild(sessionIcon);
-        sessionContainer.appendChild(sessionTitle);
+		groupLinkContainer = createEl('div', {
+			'class': 'groupLinkContainer'
+		});
+        sessionInfo.appendChild(sessionIcon);
+		sessionInfo.appendChild(sessionTitle);
         if (showLinks && sessionType !== 'current') {
-            sessionContainer.appendChild(windowResuspend);
-            sessionContainer.appendChild(windowReload);
+			groupLinkContainer.appendChild(windowResuspend);
+			groupLinkContainer.appendChild(windowReload);
         }
         if (showLinks) {
-            sessionContainer.appendChild(sessionExport);
+			groupLinkContainer.appendChild(sessionExport);
         }
         if (showLinks && sessionType !== 'saved') {
-            sessionContainer.appendChild(sessionSave);
+			groupLinkContainer.appendChild(sessionSave);
         }
         if (showLinks && sessionType !== 'current') {
-            sessionContainer.appendChild(sessionDelete);
+			groupLinkContainer.appendChild(sessionDelete);
         }
-
-        sessionContainer.appendChild(sessionDiv);
+		sessionInfo.appendChild(sessionDiv);
+        sessionContainer.appendChild(sessionInfo);
+		sessionContainer.appendChild(groupLinkContainer);
 
         return sessionContainer;
     }
@@ -96,6 +104,7 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
     function createWindowHtml(window, index, showLinks) {
 
         var groupHeading,
+			groupLinkContainer,
             windowContainer,
             groupUnsuspendCurrent,
             groupUnsuspendNew;
@@ -105,7 +114,9 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
         });
 
         windowContainer = createEl('span', {}, 'Window ' + (index + 1) + ':\u00A0');
-
+		groupLinkContainer = createEl('div', {
+			'class': 'groupLinkContainer'
+		});
         groupUnsuspendCurrent = createEl('a', {
             'class': 'groupLink resuspendLink ',
             'href': '#'
@@ -117,10 +128,10 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
         }, chrome.i18n.getMessage('js_history_reload'));
 
         groupHeading.appendChild(windowContainer);
-        if (showLinks) {
-            groupHeading.appendChild(groupUnsuspendCurrent);
-            groupHeading.appendChild(groupUnsuspendNew);
-        }
+        // if (showLinks) {
+        //     groupHeading.appendChild(groupUnsuspendCurrent);
+        //     groupHeading.appendChild(groupUnsuspendNew);
+        // }
 
         return groupHeading;
     }
