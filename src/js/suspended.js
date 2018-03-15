@@ -19,19 +19,23 @@
     let currentTheme;
     let currentHideNag;
     let currentCommand;
-
+	function url_domain(data) {
+		const matchingData = data.match(/(http[s]?:\/\/)?([^\/\s]+\/)(.*)/i);
+		return ((matchingData) && (matchingData[2])) ? matchingData[2].replace('www.', '').replace('/', '') : null;
+	}
     function preInit() {
         const href = window.location.href;
         const titleRegex = /ttl=([^&]*)/;
         const urlRegex = /uri=(.*)/;
-
-        const preTitleEncoded = href.match(titleRegex) ? href.match(titleRegex)[1] : null;
-        if (preTitleEncoded) {
-            const decodedPreTitle = decodeURIComponent(preTitleEncoded);
-            setTitle(decodedPreTitle);
-        }
-
+        // const preTitleEncoded = href.match(titleRegex) ? href.match(titleRegex)[1] : null;
         const preUrlEncoded = href.match(urlRegex) ? href.match(urlRegex)[1] : null;
+        
+		const preTitleEncoded = url_domain(preUrlEncoded);
+		if (preTitleEncoded) {
+			const decodedPreTitle = decodeURIComponent(preTitleEncoded);
+			setTitle(decodedPreTitle);
+		}
+		
         if (preUrlEncoded) {
             const preUrlDecoded = decodeURIComponent(preUrlEncoded);
             setUrl(preUrlDecoded);
@@ -63,9 +67,11 @@
         if (currentTitle === title) {
             return;
         }
-        currentTitle = title;
-        document.getElementById('gsTitle').innerHTML = title;
-        document.getElementById('gsTopBarTitle').innerHTML = title;
+        if (currentTitle === undefined || currentTitle === null || currentTitle === '') {
+			currentTitle = title;
+			document.getElementById('gsTitle').innerHTML = title;
+			document.getElementById('gsTopBarTitle').innerHTML = title;
+        }
     }
 
     function setUrl(url) {

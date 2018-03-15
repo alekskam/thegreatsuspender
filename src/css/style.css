@@ -99,13 +99,22 @@ hr {
     margin-left: 10px;
 }
 .pageHeader {
-    background: #134960;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: space-between;
+    display: flex;
+    background: #67809e;
     color: #fff;
-    height: 63px;
-    line-height: 63px;
+    height: 44px;
     margin: 0;
-    padding: 0 0 0 50px;
+    padding: 0 19px 0 11px;
     font-weight: 300;
+}
+.headerTitle {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 img.headerIcon {
     margin: 19px 5px 0 0;
@@ -270,11 +279,28 @@ hr.splashRule {
 .reallyHidden {
     display: none;
 }
+.extensionName {
+    display: none;
+}
+.snowflake-options {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: url('../img/snowflake.svg') no-repeat;
+    background-size: contain;
+    margin-bottom: 8px;
+    margin-top: 6px;
+}
+
 .mainContent {
-    width: 900px;
     margin: 40px auto;
     background: #fff;
-    overflow: hidden;
+    width: 940px;
+    height: 1014px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 9px 12px 0 rgba(0, 0, 0, 0.14);
 }
 .contentNav, .content {
     float: left;
@@ -393,38 +419,60 @@ a.historyLink:hover {
 
 /* suspended tab styles */
 .gsTopBar  {
+    height: 65px;
     position: fixed;
-    background: #efefef;
+    background: #f0f6f7;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     padding: 15px 0;
-    line-height: 30px;
     width: 100%;
     max-width: 100%;
     text-align: center;
-    color: #444;
-    border-bottom: 1px solid #aaa;
-    box-shadow: 0 0 4px -2px rgba(0, 0, 0, 0.5);
+    color: #67809e;
+    box-shadow: 0 15px 16px 0 rgba(0, 0, 0, 0.03);
 }
+
 .gsTitleWrap {
-    width: 94%;
-    margin: 0px auto;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gsTitleWrap a {
+    display: none;
+}
+
+.imgContainger {
+    margin: 0 16px 0 42px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: white;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
 }
 .gsTopBarImg {
-    margin-right: 5px;
-    margin-bottom: -1px;
     height: 16px;
     width: 16px;
 }
 .gsTopBarTitle {
-    font-size: 19px;
-    line-height: 26px;
-    color: rgb(68, 68, 68);
+    cursor: pointer;
+    font-family: Roboto;
+    font-size: 20px;
+    color: #67809e;
     font-weight: 300;
 }
+#hotkeyCommand {
+    display: none;
+}
 .gsReloadLink {
+    display:none;
     cursor: pointer;
 }
 .gsPreview {
@@ -445,8 +493,10 @@ a.historyLink:hover {
     padding-top: 100px;
 }
 .centerBox {
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .suspendedMsg {
     width: 100%;
@@ -456,21 +506,60 @@ a.historyLink:hover {
 .suspendedMsg, .gsPreview {
     cursor: pointer;
 }
+#gsTitleLinks {
+    margin-right: 42px;
+    display: flex;
+}
+#gsWhitelistLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 132px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #d7eff6;
+    color: #3889AB;
+    text-decoration: none;
+    cursor: pointer;
+}
+#gsWhitelistLink:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
 .suspendedMsg h1, .suspendedMsg h2, .suspendedMsg h3 {
     color: #134960;
-    margin: 30px 0 0;
     font-weight: 300;
 }
 .suspendedMsg h1 {
-    font-size: 60px;
+    margin: 0;
+    height: 58px;
+    font-size: 50px;
+    color: #67809e;
+    font-weight: bold;
 }
 .suspendedMsg h2 {
-    font-size: 40px;
-}
-.suspendedMsg h3 {
+    height: 24px;
     font-size: 20px;
-    font-style: italic;
+    color: #67809e;
+    margin-top: 8px;
 }
+
+.snowflake-image {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+    margin-bottom: 24px;
+}
+.snowflake-image:before {
+    height: 50px;
+    width: 50px;
+    display: block;
+    background: url('../img/freeze.svg');
+    content: '';
+    background-size: contain;
+}
+
 @media all and (max-width: 600px) {
     .suspendedMsg h1 {
         font-size: 45px;

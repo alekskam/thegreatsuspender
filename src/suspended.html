@@ -60,18 +60,21 @@
 
 <div id="gsTopBar" class="gsTopBar">
 	<div id="gsTitleWrap" class="gsTitleWrap">
-		<img id="gsTopBarImg" class="gsTopBarImg" /> <span id="gsTopBarTitle" class="gsTopBarTitle"></span>
+		<div class="imgContainger">
+			<img id="gsTopBarImg" class="gsTopBarImg" />
+		</div>
+		<span id="gsTopBarTitle" class="gsTopBarTitle"></span>
 		<br>
 		<a id="gsTopBarUrl" class="gsTopBarUrl"></a>
 	</div>
 	<div id="gsTitleLinks">
 		<a id="gsReloadLink" class="gsReloadLink" data-i18n="__MSG_html_suspended_tab_reload__"></a>
-		<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
 		<a id="gsWhitelistLink" class="gsWhitelistLink" data-i18n="__MSG_html_suspended_tab_whitelist__"></a>
 	</div>
 </div>
 <div id="suspendedMsg" class="suspendedMsg centerBoxContainer">
     <div class="centerBox">
+		<div class="snowflake-image"></div>
 		<h1 data-i18n="__MSG_html_suspended_tab_suspended__"></h1>
 		<h2 data-i18n="__MSG_html_suspended_click_to_reload__"></h2>
 		<h3><span id="hotkeyCommand"></span></h3>
