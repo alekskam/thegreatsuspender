@@ -33,9 +33,9 @@
   },
   "options_page": "options.html",
   "icons": {
-    "16": "img/icon16.png",
-    "48": "img/icon48.png",
-    "128": "img/icon128.png"
+    "16": "img/snowflake.png",
+    "48": "img/snowflake.png",
+    "128": "img/snowflake.png"
   },
   "web_accessible_resources": ["suspended.html"],
   "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'",

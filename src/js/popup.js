@@ -111,16 +111,16 @@
         // Update status icon and text
         if (status === 'normal' || status === 'active') {
             statusDetail = chrome.i18n.getMessage('js_popup_normal');
-            statusIconClass = 'fa fa-clock-o';
+            statusIconClass = 'fa clock-icon';
 
         } else if (status === 'suspended') {
             statusDetail = chrome.i18n.getMessage('js_popup_suspended') +
-                " <a href='#'>" + chrome.i18n.getMessage('js_popup_suspended_unsuspend') + '</a>';
-            statusIconClass = 'fa fa-pause';
+                " <a href='#' class='header-button'>" + chrome.i18n.getMessage('js_popup_suspended_unsuspend') + '</a>';
+            statusIconClass = 'fa freeze-white-icon';
 
         } else if (status === 'never') {
             statusDetail = chrome.i18n.getMessage('js_popup_never');
-            statusIconClass = 'fa fa-ban';
+            statusIconClass = 'fa fire-icon';
 
         } else if (status === 'special') {
             statusDetail = chrome.i18n.getMessage('js_popup_special');
@@ -128,8 +128,8 @@
 
         } else if (status === 'whitelisted') {
             statusDetail = chrome.i18n.getMessage('js_popup_whitelisted') +
-                " <a href='#'>" + chrome.i18n.getMessage('js_popup_whitelisted_remove') + '</a>';
-            statusIconClass = 'fa fa-check';
+                " <a href='#' class='header-button'>" + chrome.i18n.getMessage('js_popup_whitelisted_remove') + '</a>';
+            statusIconClass = 'fa whitelist-icon';
 
         } else if (status === 'audible') {
             statusDetail = chrome.i18n.getMessage('js_popup_audible');
@@ -147,7 +147,7 @@
         } else if (status === 'tempWhitelist') {
             statusDetail = chrome.i18n.getMessage('js_popup_temp_whitelist') +
                 " <a href='#'>" + chrome.i18n.getMessage('js_popup_temp_whitelist_unpause') + '</a>';
-            statusIconClass = 'fa fa-pause';
+            statusIconClass = 'fa whitelist-icon';
 
         } else if (status === 'noConnectivity') {
             statusDetail = chrome.i18n.getMessage('js_popup_no_connectivity');
