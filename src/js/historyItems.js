@@ -26,12 +26,13 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
 
         if (sessionType === 'saved') {
             titleText = session.name;
+            titleText +=  ' (' + winCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_window'), winCnt) + ', ' +
+				tabCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_tab'), tabCnt) + ')';
         } else {
-            titleText = gsUtils.getHumanDate(session.date);
+            titleText = winCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_window'), winCnt) + ', ' +
+				tabCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_tab'), tabCnt) + ': ';
+            titleText+= gsUtils.getHumanDate(session.date);
         }
-        titleText += '&nbsp;&nbsp;<small>(' +
-            winCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_window'), winCnt) + ', ' +
-            tabCnt + pluralise(' ' + chrome.i18n.getMessage('js_history_tab'), tabCnt) + ')</small>';
         sessionInfo = createEl('div', {
            'class': 'sessionInfo'
         });
@@ -104,7 +105,7 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
     function createWindowHtml(window, index, showLinks) {
 
         var groupHeading,
-			groupLinkContainer,
+			groupLinkWindow,
             windowContainer,
             groupUnsuspendCurrent,
             groupUnsuspendNew;
@@ -114,8 +115,8 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
         });
 
         windowContainer = createEl('span', {}, 'Window ' + (index + 1) + ':\u00A0');
-		groupLinkContainer = createEl('div', {
-			'class': 'groupLinkContainer'
+		groupLinkWindow = createEl('div', {
+			'class': 'groupLinkWindow'
 		});
         groupUnsuspendCurrent = createEl('a', {
             'class': 'groupLink resuspendLink ',
@@ -127,12 +128,13 @@ var historyItems = (function () { // eslint-disable-line no-unused-vars
             'href': '#'
         }, chrome.i18n.getMessage('js_history_reload'));
 
-        groupHeading.appendChild(windowContainer);
-        // if (showLinks) {
-        //     groupHeading.appendChild(groupUnsuspendCurrent);
-        //     groupHeading.appendChild(groupUnsuspendNew);
-        // }
-
+       
+        if (showLinks) {
+			groupLinkWindow.appendChild(groupUnsuspendCurrent);
+			groupLinkWindow.appendChild(groupUnsuspendNew);
+			windowContainer.appendChild(groupLinkWindow);
+        }
+		groupHeading.appendChild(windowContainer);
         return groupHeading;
     }
 

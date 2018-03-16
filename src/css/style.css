@@ -10,7 +10,10 @@
 */
 
 /* RESET */
-
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
 html, body, div, span, applet, object, iframe,
 h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,6 +32,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
+    font-family: Roboto;
 	vertical-align: baseline;
 }
 * { box-sizing: border-box; }
@@ -44,7 +48,7 @@ ol, ul {
 * {box-sizing: border-box;}
 body {
     color: #67809e;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-family: Roboto;
 	font-size: 15px;
     background: #cfe0e4;
     font-weight: 300;
@@ -72,7 +76,7 @@ p {
 	margin: 0 0 15px;
 }
 a {
-    color: #3889AB;
+    color: #67809e;
     text-decoration: none;
     cursor: pointer;
 }
@@ -144,7 +148,7 @@ img.headerIcon {
 }
 select {
     min-width: 150px;
-    color: #444;
+    color: #67809e;
 }
 .formRow select {
     color: #67809e;
@@ -279,7 +283,7 @@ hr.splashRule {
     background: #ccc;
 }
 .btnDonate {
-		font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+		font-family: Roboto;
 		margin: 0 7px 0 0;
     float: left;
 }
@@ -318,7 +322,26 @@ hr.splashRule {
     margin-bottom: 8px;
     margin-top: 6px;
 }
-
+.about-title {
+    margin-bottom: 18px;
+    width: 245px;
+    height: 24px;
+    font-size: 20px;
+    text-align: left;
+    color: #67809e;
+}
+.about-contact {
+    height: 16px;
+    font-size: 14px;
+}
+.about-link {
+    height: 16px;
+    font-size: 14px;
+    text-decoration: underline;
+}
+.about-link:hover {
+    color: #01579B;
+}
 .image {
     margin-right: 8px;
     width: 20px;
@@ -327,7 +350,7 @@ hr.splashRule {
     background-repeat: no-repeat!important;
 }
 .heart-image {
-    background: url('../img/keyboard-shortcuts.svg');
+    background: url('../img/support.svg');
 }
 .keyboard-image {
     background: url('../img/keyboard-shortcuts.svg');
@@ -429,6 +452,7 @@ a.historyLink:hover {
 .sessionIcon {
     cursor: pointer;
     padding-right: 10px;
+    display: none;
 }
 .sessionContents div:last-child {
     padding-bottom: 10px;
@@ -436,6 +460,14 @@ a.historyLink:hover {
 .groupLinkContainer {
     width: 100%;
     justify-content: flex-end;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.groupLinkWindow {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: flex-start;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -478,6 +510,19 @@ a.historyLink:hover {
 }
 #configureShortcuts {
     width: 110px;
+    padding: 0;
+    line-height: normal;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #67809e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#importSession {
+    width: 131px;
+    padding: 0;
+    line-height: normal;
     height: 36px;
     border-radius: 5px;
     background-color: #67809e;
@@ -594,7 +639,7 @@ a.historyLink:hover {
     height: 36px;
     border-radius: 5px;
     background-color: #d7eff6;
-    color: #3889AB;
+    color: #67809e;
     text-decoration: none;
     cursor: pointer;
 }

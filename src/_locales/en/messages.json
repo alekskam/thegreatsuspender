@@ -224,11 +224,11 @@
     "js_popup_error": { "message": "Auto-freeze unavailable for this tab." },
 
     // Session Management page (Javascript code)
-    "js_history_delete": { "message": "delete" },
-    "js_history_export": { "message": "export" },
-    "js_history_reload": { "message": "reload" },
-    "js_history_resuspend": { "message": "refreeze" },
-    "js_history_save": { "message": "save" },
+    "js_history_delete": { "message": "Delete" },
+    "js_history_export": { "message": "Export" },
+    "js_history_reload": { "message": "Reload" },
+    "js_history_resuspend": { "message": "Refreeze" },
+    "js_history_save": { "message": "Save" },
     "js_history_window": { "message": "window" },
     "js_history_tab": { "message": "tab" },
     "js_history_plural": { "message": "s" },
