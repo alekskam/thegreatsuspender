@@ -192,8 +192,12 @@ ul.unorderedList li {
 .splash {
     font-size: 16px;
     width: 900px;
-    margin: 40px auto;
+    margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .splash h1 {
     font-size: 60px;
@@ -241,29 +245,64 @@ hr.splashRule {
 }
 .dude-text-top {
     padding-top: 10px;
+    text-align: center;
 }
 .dude-text-base {
-    display: table-cell;
-    padding-left: 3px;
-    padding-top: 20px;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 900px;
+}
+.dude-buttons-wrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.dude-text-top h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+    font-weight: bold;
 }
 .dude-text-base p {
     font-weight: 400;
-    font-size: 22px;
+    font-size: 18px;
     margin: 0;
     padding-top: 10px;
 }
 .dude-text-base p span {
-    font-size: 22px;
-    line-height: 27px;
+    font-size: 18px;
+}
+.strong-text {
+    font-weight: bold;
+}
+#visitOptions {
+    margin-top: 36px;
+}
+#restoreSession {
+    margin-right: 10px;
+}
+#sessionManagementMessage {
+    font-size: 18px;
+    text-decoration: underline;
+}
+.recoverySection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 .btn {
-    background: #52a6c8;
+    background: #67809e;
     color: #fff;
-    border-radius: 3px;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
+    border-radius: 5px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 18px;
     display: inline-block;
     border: 0;
     font-size: 14px;
@@ -272,46 +311,64 @@ hr.splashRule {
     min-width: 80px;
     text-align: center;
 }
+
 .btn:hover {
-    background: #4994B3;
+    background: #4B5D73;
+    text-decoration: underline;
 }
+
 .btn.btnNeg {
     background: #ddd;
     color: #333;
 }
+
 .btn.btnNeg:hover {
     background: #ccc;
 }
+.btn.close {
+    background: #ccc;
+}
+.btn.close:hover {
+    background: #888;
+}
 .btnDonate {
-		font-family: Roboto;
-		margin: 0 7px 0 0;
+	font-family: Roboto;
+	margin: 0 7px 0 0;
     float: left;
 }
+
 .btnDonate:hover {
     text-decoration: underline;
 }
+
 .btnDisabled {
     background: #f1f1f1;
     color: #888;
     cursor: default;
 }
+
 .btnDisabled:hover {
     background: #f1f1f1;
     color: #888;
 }
+
 .lesserText {
     color: #929292;
     font-size: 0.8em;
 }
+
 .hidden {
     visibility: hidden;
 }
+
 .reallyHidden {
     display: none;
 }
+
 .extensionName {
     display: none;
 }
+
 .snowflake-options {
     display: flex;
     align-items: center;
@@ -322,6 +379,7 @@ hr.splashRule {
     margin-bottom: 8px;
     margin-top: 6px;
 }
+
 .about-title {
     margin-bottom: 18px;
     width: 245px;
@@ -330,13 +388,14 @@ hr.splashRule {
     text-align: left;
     color: #67809e;
 }
+
 .about-contact {
     height: 16px;
     font-size: 14px;
 }
 .about-link {
     height: 16px;
-    font-size: 14px;
+    font-size: 18px;
     text-decoration: underline;
 }
 .about-link:hover {
@@ -519,6 +578,9 @@ a.historyLink:hover {
     align-items: center;
     justify-content: center;
 }
+#configureShortcuts:hover {
+    background-color: #4B5D73;
+}
 #importSession {
     width: 131px;
     padding: 0;
@@ -529,6 +591,9 @@ a.historyLink:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+#importSession:hover {
+    background-color: #4B5D73;
 }
 #screenCaptureNotice {
     display: none;
@@ -644,8 +709,9 @@ a.historyLink:hover {
     cursor: pointer;
 }
 #gsWhitelistLink:hover {
-    text-decoration: none;
-    opacity: 0.9;
+    text-decoration: underline;
+    background-color: #cfe0e4;
+
 }
 .suspendedMsg h1, .suspendedMsg h2, .suspendedMsg h3 {
     color: #134960;
@@ -914,7 +980,7 @@ a.historyLink:hover {
 }
 
 .close-x {
-    color: white;
+    color: #67809e;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -922,14 +988,14 @@ a.historyLink:hover {
 }
 .close-x:hover,
 .close-x:focus {
-    color: #000;
+    color: #4B5D73;
     text-decoration: none;
     cursor: pointer;
 }
 .modal-header {
     padding: 10px 15px;
-    background-color: #01579B;
-    color: white;
+    background-color: #cfe0e4;
+    color: #67809e;
 }
 .modal-header h2 {
     font-weight: normal;
@@ -943,6 +1009,13 @@ a.historyLink:hover {
     padding: 10px 15px;
     background-color: #eee;
 }
+.modal-body div input{
+    cursor: pointer;
+}
+.modal-body div label{
+     cursor: pointer;
+}
+
 .tooltipIcon {
     display: none;
 }
@@ -972,8 +1045,8 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
 
 /* custom radio btns */
 .radio {
-    position: relative;
-    display: block;
+    display: flex;
+    align-items: center;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -982,13 +1055,13 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
     z-index: 1;
 }
 .radio input[type="radio"]:checked+label::before {
-    border-color: #52a6c8;
+    border-color: #67809e;
 }
 .radio input[type="radio"]:checked+label::after {
     transform: scale(1, 1);
 }
 .radio input[type="radio"]:checked+label::after {
-    background-color: #52a6c8;
+    background-color: #67809e;
 }
 .radio label {
     display: inline-block;
@@ -1003,7 +1076,7 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
     width: 17px;
     height: 17px;
     left: 0;
-    top: 2px;
+    top: 0;
     margin-left: -20px;
     border: 1px solid #ccc;
     border-radius: 50%;
@@ -1016,7 +1089,7 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
     width: 13px;
     height: 13px;
     left: 3px;
-    top: 5px;
+    top: 3px;
     margin-left: -20px;
     border-radius: 50%;
     background-color: #555;
@@ -1076,4 +1149,28 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
     opacity: 1;
+}
+.extra-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.extension-icon {
+    width: 120px;
+    height: 120px;
+    background: url('../img/snowflake.svg') no-repeat;
+    background-size: contain;
+    margin-bottom: 16px;
+    margin-top: 92px;
+}
+.extension-message {
+    font-size: 50px;
+    font-weight: 500;
+    color: #67809e;
+    width: 90%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,8 +1,8 @@
 {
     // manifest.json
-    "ext_extension_name": { "message": "The Great Suspender" },
-    "ext_extension_description": { "message": "Automatically suspends unused tabs to free up system resources" },
-    "ext_default_title": { "message": "The Great Suspender" },
+    "ext_extension_name": { "message": "TabFreeze" },
+    "ext_extension_description": { "message": "Automatically freezes unused tabs to free up system resources" },
+    "ext_default_title": { "message": "TabFreeze" },
     "ext_cmd_suspend_tab_description": { "message": "Freeze/Unfreeze active tab" },
     "ext_cmd_unsuspend_tab_description": { "message": "Unfreeze active tab" },
     "ext_cmd_suspend_active_window_description": { "message": "Freeze all other tabs in active window" },
@@ -41,7 +41,7 @@
 
     // Important notice page
     "html_notice_title": { "message": "Notice" },
-    "html_notice_important_notice": { "message": "Important notice from The Great Suspender" },
+    "html_notice_important_notice": { "message": "Important notice from TabFreeze" },
 
     // Options page
     "html_options_title": { "message": "General Settings" },
@@ -90,7 +90,7 @@
     "html_options_whitelist_tooltip_line1": { "message": "Add the URL of each page you want to whitelist on a new line. For example:" },
     "html_options_whitelist_tooltip_line2": { "message": "To whitelist multiple sites in one line you can specify part of the url instead:" },
     "html_options_whitelist_tooltip_line3": { "message": "You can also specify regular expressions by enclosing the text in forward slashes:" },
-    "html_options_other_enable_context_menu": { "message": "Add TabFreezer to right-click context menu" },
+    "html_options_other_enable_context_menu": { "message": "Add TabFreeze to right-click context menu" },
     "html_options_other_enable_sync": { "message": "Sync settings between different systems" },
     "html_options_other_enable_sync_tooltip_line1a": { "message": "Extension settings will be synchronised across all chrome browsers which are logged in" },
     "html_options_other_enable_sync_tooltip_line1b": { "message": "with the same profile." },
@@ -132,7 +132,7 @@
     // Success page (after recovering from a crashed session)
     "html_success_title": { "message": "Recovery" },
     "html_success_great_success": { "message": "Great success!" },
-    "html_success_all_tabs_restored": { "message": "All your tabs have been restored." },
+    "html_success_all_tabs_restored": { "message": "All your tabs have been restored. " },
     "html_success_goto_advanced_prefix": { "message": "For advanced Session Management, visit the" },
     "html_success_goto_advanced_suffix": { "message": "page" },
 
@@ -151,7 +151,7 @@
     "html_suspended_modal_this_domain": { "message": "this domain" },
     "html_suspended_modal_this_page": { "message": "this page" },
     "html_suspended_modal_temp_whitelist": { "message": "Just this tab, for this session only" },
-    "html_suspended_modal_temp_whitelist_notice": { "message": "Whitelisted sites will not be automatically suspended." },
+    "html_suspended_modal_temp_whitelist_notice": { "message": "Whitelisted sites will not be automatically frozen" },
     "html_suspended_modal_ok": { "message": "OK" },
     "html_suspended_modal_cancel": { "message": "Cancel" },
     "html_suspended_donation_question": { "message": "Does this extension make you happy?" },
@@ -205,7 +205,7 @@
 
     // Dropdown menu from button in the address bar (Javascript code)
     "js_popup_normal": { "message": "Tabs will be frozen automatically" },
-    "js_popup_special": { "message": "Tab cannot be frozen" },
+    "js_popup_special": { "message": "Tab can't be frozen" },
     "js_popup_suspended": { "message": "Tab is frozen" },
     "js_popup_suspended_unsuspend": { "message": "Unfreeze" },
     "js_popup_whitelisted": { "message": "Tab in whitelist" },
@@ -216,10 +216,10 @@
     "js_popup_pinned": { "message": "Tab has been pinned" },
     "js_popup_temp_whitelist": { "message": "Tab freezing paused." },
     "js_popup_temp_whitelist_unpause": { "message": "Unpause" },
-    "js_popup_never": { "message": "Automatic tab freezing disabled." },
+    "js_popup_never": { "message": "Automatic suspension disabled" },
     "js_popup_no_connectivity": { "message": "No network connection." },
     "js_popup_charging": { "message": "Connected to power source." },
-    "js_popup_unknown": { "message": "Waiting for tab to load..." },
+    "js_popup_unknown": { "message": "Waiting for tab to load …" },
     "js_popup_initialising": { "message": "Waiting for extension to initialize..." },
     "js_popup_error": { "message": "Auto-freeze unavailable for this tab." },
 
