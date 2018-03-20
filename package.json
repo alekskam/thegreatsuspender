@@ -1,7 +1,7 @@
 {
-  "name": "thegreatsuspender",
+  "name": "TabFreeze",
   "version": "0.0.0",
-  "description": "A chrome extension for suspending all tabs to free up memory",
+  "description": "A chrome extension for freezing all tabs to free up memory",
   "main": "",
   "scripts": {
     "build": "grunt",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/deanoemcke/thegreatsuspender.git"
+    "url": "git://github.com/alekskam/thegreatsuspender.git"
   },
   "keywords": [
     "chrome",
@@ -20,10 +20,10 @@
     "suspend",
     "tab"
   ],
-  "author": "deanoemcke",
+  "author": "SimilarWeb",
   "license": "GPLv2",
   "bugs": {
-    "url": "https://github.com/deanoemcke/thegreatsuspender/issues"
+    "url": "https://support.similarweb.com/hc/en-us"
   },
   "devDependencies": {
     "eslint": "^4.4.1",

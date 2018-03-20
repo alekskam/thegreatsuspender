@@ -139,7 +139,7 @@
 
         } else if (status === 'formInput') {
             statusDetail = chrome.i18n.getMessage('js_popup_form_input') +
-                " <a href='#'>" + chrome.i18n.getMessage('js_popup_form_input_unpause') + '</a>';
+                " <a href='#' class='header-button'>" + chrome.i18n.getMessage('js_popup_form_input_unpause') + '</a>';
             statusIconClass = 'fa edit-icon header-icon-alignment';
 
         } else if (status === 'pinned') {
@@ -148,7 +148,7 @@
 
         } else if (status === 'tempWhitelist') {
             statusDetail = chrome.i18n.getMessage('js_popup_temp_whitelist') +
-                " <a href='#'>" + chrome.i18n.getMessage('js_popup_temp_whitelist_unpause') + '</a>';
+                " <a href='#' class='header-button'>" + chrome.i18n.getMessage('js_popup_temp_whitelist_unpause') + '</a>';
             statusIconClass = 'fa whitelist-icon header-icon-alignment';
 
         } else if (status === 'noConnectivity') {

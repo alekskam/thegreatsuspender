@@ -115,6 +115,9 @@ hr {
     float: right;
     margin-left: 10px;
 }
+.small-text {
+    font-size: 14px!important;
+}
 .pageHeader {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -244,8 +247,14 @@ hr.splashRule {
     padding-right: 25px;
 }
 .dude-text-top {
-    padding-top: 10px;
     text-align: center;
+}
+#keyboardShortcuts {
+    margin-top: 8px;
+    display: flex;
+    height: 208px;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .dude-text-base {
     flex-direction: column;
@@ -381,6 +390,7 @@ hr.splashRule {
 }
 
 .about-title {
+    margin-top: 30px;
     margin-bottom: 18px;
     width: 245px;
     height: 24px;
@@ -432,7 +442,7 @@ hr.splashRule {
 }
 .contentNav, .content {
     float: left;
-    padding: 24px 8px 40px 38px;
+    padding: 0px 8px 40px 38px;
 }
 .contentNav {
     background: #f0f6f7;
@@ -462,7 +472,6 @@ hr.splashRule {
     padding: 0 0 10px 0;
     margin: 30px 0 0 0;
     font-size: 20px;
-    font-weight: 600;
 }
 .gsNote {
 	font-style: italic;
@@ -542,6 +551,7 @@ a.historyLink:hover {
     justify-content: center;
     height: 23px;
     font-size: 13px;
+    font-weight: 600;
 }
 .sessionContainer {
     display: flex;
@@ -1166,7 +1176,7 @@ input[type=checkbox]:checked:before { background: url('../img/check-on.svg') #ff
 }
 .extension-message {
     font-size: 50px;
-    font-weight: 500;
+    font-weight: bold;
     color: #67809e;
     width: 90%;
     display: flex;
