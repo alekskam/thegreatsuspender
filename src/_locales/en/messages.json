@@ -166,7 +166,6 @@
 
     // Updated page
     "html_updated_title": { "message": "Updated" },
-    "html_updated_great_suspender_updated": { "message": "has been updated" },
     "html_updated_info_line1": { "message": "An automatic backup was made of your tabs before the update." },
     "html_updated_info_line2_prefix": { "message": "If you encountered any issues during the update, you can recover lost tabs from the " },
     "html_updated_info_line2_suffix": { "message": " page." },

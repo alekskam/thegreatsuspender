@@ -105,31 +105,7 @@
             document.querySelector('body').classList.remove('dark');
         }
     }
-
-    function handleDonationPopup(hideNag) {
-        const queueNag = !hideNag && !showingNag && currentHideNag !== hideNag;
-        currentHideNag = hideNag;
-
-        if (queueNag) {
-            //show dude and donate link (randomly 1 of 33 times)
-            if (Math.random() > 0.97) {
-                var donationPopupFocusListener = function (e) {
-                    e.target.removeEventListener('focus', donationPopupFocusListener);
-
-                    //if user has donated since this page was first generated then dont display popup
-                    if (!currentHideNag) {
-                        loadDonationPopupTemplate();
-                    }
-                };
-                window.addEventListener('focus', donationPopupFocusListener);
-            }
-        } else if (hideNag && showingNag) {
-            showingNag = false;
-            document.getElementById('dudePopup').classList.remove('poppedup');
-            document.getElementById('donateBubble').classList.remove('fadeIn');
-        }
-    }
-
+    
     function setPreviewMode(previewMode) {
         if (currentPreviewMode === previewMode) {
             return;
@@ -345,37 +321,7 @@
         document.getElementsByTagName('body')[0].appendChild(toastEl);
     }
 
-    function loadDonateButtonsHtml() {
-        document.getElementById('donateButtons').innerHTML = this.responseText;
-        document.getElementById('bitcoinBtn').innerHTML = chrome.i18n.getMessage('js_donate_bitcoin');
-        document.getElementById('paypalBtn').setAttribute('value', chrome.i18n.getMessage('js_donate_paypal'));
-        document.getElementById('bitcoinBtn').onclick = function () {
-            try { chrome.extension.getBackgroundPage().gsAnalytics.reportEvent('Donations', 'Click', 'bitcoin'); }
-            catch (error) { console.error(error); }
-        };
-        document.getElementById('paypalBtn').onclick = function () {
-            try { chrome.extension.getBackgroundPage().gsAnalytics.reportEvent('Donations', 'Click', 'paypal'); }
-            catch (error) { console.error(error); }
-        };
-    }
-
-    function loadDonationPopupTemplate() {
-        showingNag = true;
-
-        var popupEl = document.createElement('div');
-        popupEl.innerHTML = document.getElementById('donateTemplate').innerHTML;
-        localiseHtml(popupEl);
-        document.getElementsByTagName('body')[0].appendChild(popupEl);
-
-        var request = new XMLHttpRequest();
-        request.onload = loadDonateButtonsHtml;
-        request.open('GET', 'support.html', true);
-        request.send();
-
-        document.getElementById('dudePopup').setAttribute('class', 'poppedup');
-        document.getElementById('donateBubble').setAttribute('class', 'fadeIn');
-    }
-
+    
     function getRootUrl(url, includePath) {
         let rootUrlStr = url;
 
@@ -515,9 +461,6 @@
         }
         if (request.hasOwnProperty('theme')) {
             setTheme(request.theme);
-        }
-        if (request.hasOwnProperty('hideNag')) {
-            handleDonationPopup(request.hideNag);
         }
         if (request.hasOwnProperty('command')) {
             setCommand(request.command);

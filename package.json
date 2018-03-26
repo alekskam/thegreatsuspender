@@ -8,10 +8,6 @@
     "generate-key": "C:/OpenSSL/bin/openssl.exe genrsa -out key.pem",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/alekskam/thegreatsuspender.git"
-  },
   "keywords": [
     "chrome",
     "extension",

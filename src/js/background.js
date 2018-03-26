@@ -1,11 +1,5 @@
 /* global gsStorage, gsUtils, gsSession, gsMessages, gsSuspendManager, chrome, XMLHttpRequest */
-/*
- * The Great Suspender
- * Copyright (C) 2017 Dean Oemcke
- * Available under GNU GENERAL PUBLIC LICENSE v2
- * http://github.com/deanoemcke/thegreatsuspender
- * ༼ つ ◕_◕ ༽つ
-*/
+
 var tgs = (function () { // eslint-disable-line no-unused-vars
     'use strict';
 
@@ -48,7 +42,6 @@ var tgs = (function () { // eslint-disable-line no-unused-vars
             else {
                 //TODO: Possibly fallback on lastFocusedWindowId and lastFocusedTabByWindowId here?
                 //except during initialization!!
-                //see https://github.com/deanoemcke/thegreatsuspender/issues/574
                 callback(null);
             }
         });
